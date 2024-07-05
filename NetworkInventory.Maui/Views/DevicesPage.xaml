@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkInventory.Maui.Views.DevicesPage"
+             Title="Devices">
+
+    <ListView
+        x:Name="DevicesList"
+        RowHeight="50"
+        Background="Transparent"
+        SeparatorColor="Silver"
+        ItemSelected="DevicesList_ItemSelected"
+        ItemTapped="DevicesList_ItemTapped">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <TextCell
+                    Text="{Binding Name}"
+                    Detail="{Binding CIDR}"/>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+</ContentPage>
