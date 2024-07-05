@@ -25,35 +25,85 @@ public partial class EditDevicePage : ContentPage
 				EntryName.Text = _device.Name;
 				EntrySerialNumber.Text = _device.SerialNumber;
 
-				var Ipv4Octets = _device.IPv4.Split('.');
-				EntryIPv4Octet0.Text = Ipv4Octets[0];
-				EntryIPv4Octet1.Text = Ipv4Octets[1];
-				EntryIPv4Octet2.Text = Ipv4Octets[2];
-				EntryIPv4Octet3.Text = Ipv4Octets[3];
+				if (_device.IPv4.Equals("DHCP"))
+				{
+					EntryIPv4Octet0.Text = "0";
+					EntryIPv4Octet1.Text = "0";
+					EntryIPv4Octet2.Text = "0";
+					EntryIPv4Octet3.Text = "0";
+				}
+				else
+				{
+					var Ipv4Octets = _device.IPv4.Split('.');
+					EntryIPv4Octet0.Text = Ipv4Octets[0];
+					EntryIPv4Octet1.Text = Ipv4Octets[1];
+					EntryIPv4Octet2.Text = Ipv4Octets[2];
+					EntryIPv4Octet3.Text = Ipv4Octets[3];
+				}
 
-				var subnetMaskOctets = _device.SubnetMask.Split('.');
-				EntrySubnetMaskOctet0.Text = subnetMaskOctets[0];
-				EntrySubnetMaskOctet1.Text = subnetMaskOctets[1];
-				EntrySubnetMaskOctet2.Text = subnetMaskOctets[2];
-				EntrySubnetMaskOctet3.Text = subnetMaskOctets[3];
+				if (_device.SubnetMask.Equals("DHCP"))
+				{
+					EntrySubnetMaskOctet0.Text = "0";
+					EntrySubnetMaskOctet1.Text = "0";
+					EntrySubnetMaskOctet2.Text = "0";
+					EntrySubnetMaskOctet3.Text = "0";
+				}
+				else
+				{
+					var subnetMaskOctets = _device.SubnetMask.Split('.');
+					EntrySubnetMaskOctet0.Text = subnetMaskOctets[0];
+					EntrySubnetMaskOctet1.Text = subnetMaskOctets[1];
+					EntrySubnetMaskOctet2.Text = subnetMaskOctets[2];
+					EntrySubnetMaskOctet3.Text = subnetMaskOctets[3];
+				}
 
-				var gatewayOctets = _device.Gateway.Split('.');
-				EntryGatewayOctet0.Text = gatewayOctets[0];
-				EntryGatewayOctet1.Text = gatewayOctets[1];
-				EntryGatewayOctet2.Text = gatewayOctets[2];
-				EntryGatewayOctet3.Text = gatewayOctets[3];
+				if (_device.Gateway.Equals("DHCP"))
+				{
+					EntryGatewayOctet0.Text = "0";
+					EntryGatewayOctet1.Text = "0";
+					EntryGatewayOctet2.Text = "0";
+					EntryGatewayOctet3.Text = "0";
+				}
+				else
+				{
+					var gatewayOctets = _device.Gateway.Split('.');
+					EntryGatewayOctet0.Text = gatewayOctets[0];
+					EntryGatewayOctet1.Text = gatewayOctets[1];
+					EntryGatewayOctet2.Text = gatewayOctets[2];
+					EntryGatewayOctet3.Text = gatewayOctets[3];
+				}
 
-				var preferredDNSOctets = _device.PreferredDNS.Split('.');
-				EntryPreferredDNSOctet0.Text = preferredDNSOctets[0];
-				EntryPreferredDNSOctet1.Text = preferredDNSOctets[1];
-				EntryPreferredDNSOctet2.Text = preferredDNSOctets[2];
-				EntryPreferredDNSOctet3.Text = preferredDNSOctets[3];
+				if (_device.PreferredDNS.Equals("DHCP"))
+				{
+					EntryPreferredDNSOctet0.Text = "0";
+					EntryPreferredDNSOctet1.Text = "0";
+					EntryPreferredDNSOctet2.Text = "0";
+					EntryPreferredDNSOctet3.Text = "0";
+				}
+				else
+				{
+					var preferredDNSOctets = _device.PreferredDNS.Split('.');
+					EntryPreferredDNSOctet0.Text = preferredDNSOctets[0];
+					EntryPreferredDNSOctet1.Text = preferredDNSOctets[1];
+					EntryPreferredDNSOctet2.Text = preferredDNSOctets[2];
+					EntryPreferredDNSOctet3.Text = preferredDNSOctets[3];
+				}
 
-				var alternateDNSOctets = _device.AlternateDNS.Split('.');
-				EntryAlternateDNSOctet0.Text = alternateDNSOctets[0];
-				EntryAlternateDNSOctet1.Text = alternateDNSOctets[1];
-				EntryAlternateDNSOctet2.Text = alternateDNSOctets[2];
-				EntryAlternateDNSOctet3.Text = alternateDNSOctets[3];
+				if (_device.AlternateDNS.Equals("DHCP"))
+				{
+					EntryAlternateDNSOctet0.Text = "0";
+					EntryAlternateDNSOctet1.Text = "0";
+					EntryAlternateDNSOctet2.Text = "0";
+					EntryAlternateDNSOctet3.Text = "0";
+				}
+				else
+				{
+					var alternateDNSOctets = _device.AlternateDNS.Split('.');
+					EntryAlternateDNSOctet0.Text = alternateDNSOctets[0];
+					EntryAlternateDNSOctet1.Text = alternateDNSOctets[1];
+					EntryAlternateDNSOctet2.Text = alternateDNSOctets[2];
+					EntryAlternateDNSOctet3.Text = alternateDNSOctets[3];
+				}
 
 				EntryVlan.Text = _device.Vlan;
 
