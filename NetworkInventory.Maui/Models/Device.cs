@@ -18,6 +18,12 @@ public class Device
 
 	private static int DecimalSubnetMaskToCIDR(string decimalMask)
 	{
+		// TODO: What to do with DHCP?
+		if (decimalMask.Equals("DHCP"))
+		{
+			return 0;
+		}
+
 		string[] octets = decimalMask.Split('.');
 
 		if (octets.Length.Equals(4) is false)
