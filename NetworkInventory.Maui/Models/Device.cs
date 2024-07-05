@@ -4,13 +4,15 @@ public class Device
 {
 	public int Id { get; set; }
 	public string Name { get; set; } = "";
+	public string SerialNumber { get; set; } = "";
 	public string IPv4 { get; set; } = "0.0.0.0";
 	public string SubnetMask { get; set; } = "255.255.255.0";
 	public string CIDR { get { return $"{IPv4}/{DecimalSubnetMaskToCIDR(SubnetMask)}"; } }
 	public string Gateway { get; set; } = "0.0.0.0";
 	public string PreferredDNS { get; set; } = "0.0.0.0";
 	public string AlternateDNS { get; set; } = "0.0.0.0";
-	public int ConnectedToDeviceId { get; set; }
+	public string Vlan { get; set; } = "";
+	public int UpstreamDeviceId { get; set; }
 	public string Location { get; set; } = "";
 	public string User { get; set; } = "";
 
