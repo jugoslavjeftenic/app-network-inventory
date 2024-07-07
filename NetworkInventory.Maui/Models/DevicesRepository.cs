@@ -10,105 +10,127 @@ public class DevicesRepository
 			SubnetMask = "255.255.255.0",
 			UpstreamDeviceId = 0,
 			Location = "ISP",
-			User = "ISP"
+			User = "ISP",
 		},
 		new Device {
 			Id = 2,
-			Name = "SU-L1-RT-RV340",
+			Name = "SUL1-RT-RV340",
 			IPv4 = "10.1.1.1",
 			SubnetMask = "255.255.255.0",
 			UpstreamDeviceId = 1,
-			Location = "Subotica - Lokacija 1"
+			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
 			Id = 3,
-			Name = "SU-SZ-SW-SG350",
+			Name = "SUL1-SW-SG350",
 			IPv4 = "10.1.2.1",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
 			UpstreamDeviceId = 2,
-			Location = "Subotica - Lokacija 1"
+			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
 			Id = 4,
-			Name = "SU-SZ-AP-240AC",
+			Name = "SUL1-AP-240AC",
 			IPv4 = "10.1.2.2",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
 			UpstreamDeviceId = 3,
-			Location = "Subotica - Lokacija 1"
+			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
 			Id = 5,
-			Name = "SU-SZ-PR-MFP521",
+			Name = "SUL1-PR-MFP521",
 			IPv4 = "10.1.2.10",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
 			UpstreamDeviceId = 3,
-			Location = "Subotica - Lokacija 1"
+			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
 			Id = 6,
-			Name = "SU-D19-100001",
+			Name = "SUL1-D19-100001",
 			IPv4 = "10.1.2.50",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
 			UpstreamDeviceId = 3,
 			Location = "Subotica - Lokacija 1",
-			User = "Info Pult"
+			User = "info-pult",
 		},
 		new Device {
 			Id = 7,
-			Name = "SU-L365-200001",
+			Name = "SUL1-L365-200001",
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
 			UpstreamDeviceId = 4,
 			Location = "Subotica - Lokacija 1",
-			User = "pera"
+			User = "pera",
 		},
 		new Device {
 			Id = 8,
-			Name = "SU-L365-200002",
+			Name = "SUL1-L365-200002",
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
 			UpstreamDeviceId = 4,
 			Location = "Subotica - Lokacija 1",
-			User = "zdera"
+			User = "zdera",
 		},
 		new Device {
 			Id = 9,
-			Name = "SU-LNO-200003",
+			Name = "SUL1-LNO-200003",
 			IPv4 = "10.1.2.203",
-			SubnetMask = "255.255.255.0"
+			SubnetMask = "255.255.255.0",
 		},
 		new Device {
 			Id = 10,
-			Name = "SU-NZ-RV340",
+			Name = "SUL2-RT-RV340",
 			IPv4 = "10.1.3.1",
 			SubnetMask = "255.255.255.0",
-			Location = "Subotica Nova zgrada"
+			Location = "Subotica - Lokacija 2",
 		},
 		new Device {
 			Id = 11,
-			Name = "SU-DNO-100002",
+			Name = "SUL2-DNO-100002",
 			IPv4 = "10.1.3.50",
-			SubnetMask = "255.255.255.0"
+			SubnetMask = "255.255.255.0",
 		},
 		new Device {
 			Id = 12,
-			Name = "SU-L365-200004",
+			Name = "SUL2-L365-200004",
 			IPv4 = "10.1.3.204",
-			SubnetMask = "255.255.255.0"
+			SubnetMask = "255.255.255.0",
 		},
 		new Device {
 			Id = 13,
-			Name = "SU-LNO-200005"
-			, IPv4 = "10.1.3.205",
+			Name = "SUL2-LNO-200005",
+			IPv4 = "10.1.3.205",
 			SubnetMask = "255.255.255.0",
-			Location = "Subotica Nova zgrada",
-			User = "bomba"
+			Location = "Subotica - Lokacija 2",
+			User = "bomba",
+		},
+		new Device {
+			Id = 14,
+			Name = "SUL2-L365-200005",
+			IPv4 = "DHCP",
+			SubnetMask = "DHCP",
+			Location = "Subotica - Lokacija 2",
+			User = "bomba",
+		},
+		new Device {
+			Id = 15,
+			Name = "SUL2-L19-200005",
+			IPv4 = "DHCP",
+			SubnetMask = "DHCP",
+			Location = "Subotica - Lokacija 2",
+		},
+		new Device {
+			Id = 16,
+			Name = "SUL2-LNO-200005",
+			IPv4 = "10.1.3.206",
+			SubnetMask = "255.255.255.0",
+			Location = "Subotica - Lokacija 2",
 		},
 	];
 
