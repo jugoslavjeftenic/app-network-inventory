@@ -184,7 +184,7 @@ public class DevicesRepository
 
 	public static void AddDevice(Device device)
 	{
-		var maxId = _devices.Max(x => x.Id);
+		var maxId = _devices.Select(x => x.Id).DefaultIfEmpty(0).Max();
 		device.Id = maxId + 1;
 		_devices.Add(device);
 	}
