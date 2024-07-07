@@ -3,22 +3,26 @@
 public class Device
 {
 	public int Id { get; set; }
-	public string Name { get; set; } = "";
-	public string SerialNumber { get; set; } = "";
-	public string IPv4 { get; set; } = "0.0.0.0";
-	public string SubnetMask { get; set; } = "255.255.255.0";
-	public string CIDR { get { return $"{IPv4}/{DecimalSubnetMaskToCIDR(SubnetMask)}"; } }
-	public string Gateway { get; set; } = "0.0.0.0";
-	public string PreferredDNS { get; set; } = "0.0.0.0";
-	public string AlternateDNS { get; set; } = "0.0.0.0";
-	public string Vlan { get; set; } = "";
+	public string? Name { get; set; } = "";
+	public string? SerialNumber { get; set; } = "";
+	public string? IPv4 { get; set; } = "0.0.0.0";
+	public string? SubnetMask { get; set; } = "255.255.255.0";
+	public string? CIDR { get { return $"{IPv4}/{DecimalSubnetMaskToCIDR(SubnetMask)}"; } }
+	public string? Gateway { get; set; } = "0.0.0.0";
+	public string? PreferredDNS { get; set; } = "0.0.0.0";
+	public string? AlternateDNS { get; set; } = "0.0.0.0";
+	public string? Vlan { get; set; } = "";
 	public int UpstreamDeviceId { get; set; }
-	public string Location { get; set; } = "";
-	public string User { get; set; } = "";
+	public string? Location { get; set; } = "";
+	public string? User { get; set; } = "";
 
-	private static int DecimalSubnetMaskToCIDR(string decimalMask)
+	private static int DecimalSubnetMaskToCIDR(string? decimalMask)
 	{
-		// TODO: What to do with DHCP?
+		if (string.IsNullOrWhiteSpace(decimalMask))
+		{
+			return 0;
+		}
+
 		if (decimalMask.Equals("DHCP"))
 		{
 			return 0;
