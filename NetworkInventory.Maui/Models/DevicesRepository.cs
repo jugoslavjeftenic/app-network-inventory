@@ -181,4 +181,11 @@ public class DevicesRepository
 			deviceToUpdate.User = device.User;
 		}
 	}
+
+	public static void AddDevice(Device device)
+	{
+		var maxId = _devices.Max(x => x.Id);
+		device.Id = maxId + 1;
+		_devices.Add(device);
+	}
 }
