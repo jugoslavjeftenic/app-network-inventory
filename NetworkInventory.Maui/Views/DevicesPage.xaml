@@ -4,23 +4,35 @@
              x:Class="NetworkInventory.Maui.Views.DevicesPage"
              Title="Devices">
 
-    <ListView
-        x:Name="DevicesList"
-        RowHeight="50"
-        Background="Transparent"
-        SeparatorColor="Silver"
-        ItemSelected="DevicesList_ItemSelected"
-        ItemTapped="DevicesList_ItemTapped">
+    <Grid
+        ColumnDefinitions="*"
+        RowDefinitions="*,50"
+        Padding="5">
 
-        <ListView.ItemTemplate>
-            <DataTemplate>
+        <ListView
+            Grid.Column="0"
+            Grid.Row="0"
+            x:Name="DevicesList"
+            RowHeight="50"
+            Background="Transparent"
+            SeparatorColor="Silver"
+            ItemSelected="DevicesList_ItemSelected"
+            ItemTapped="DevicesList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Detail="{Binding CIDR}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-                <TextCell
-                    Text="{Binding Name}"
-                    Detail="{Binding CIDR}"/>
-
-            </DataTemplate>
-        </ListView.ItemTemplate>
-
-    </ListView>
+        <Button
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="5"
+            x:Name="AddDeviceBtn"
+            Text="Add Device"
+            Clicked="AddDeviceBtn_Clicked"/>
+    </Grid>
 </ContentPage>

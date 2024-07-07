@@ -32,4 +32,9 @@ public partial class DevicesPage : ContentPage
 	{
 		DevicesList.SelectedItem = null;
 	}
+
+	private void AddDeviceBtn_Clicked(object sender, EventArgs e)
+	{
+		Shell.Current.GoToAsync(nameof(AddDevicePage));
+	}
 }
