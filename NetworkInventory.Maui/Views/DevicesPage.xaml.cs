@@ -14,9 +14,7 @@ public partial class DevicesPage : ContentPage
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
-
-		var devices = new ObservableCollection<Device>(DevicesRepository.GetDevices());
-		DevicesList.ItemsSource = devices;
+		LoadDevices();
 	}
 
 	private async void DevicesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -36,5 +34,23 @@ public partial class DevicesPage : ContentPage
 	private void AddDeviceBtn_Clicked(object sender, EventArgs e)
 	{
 		Shell.Current.GoToAsync(nameof(AddDevicePage));
+	}
+
+	private void DeleteMenuItem_Clicked(object sender, EventArgs e)
+	{
+		var menuItem = sender as MenuItem;
+		var device = menuItem?.CommandParameter as Device;
+
+		if (device is not null)
+		{
+			DevicesRepository.DeleteDevice(device.Id);
+			LoadDevices();
+		}
+	}
+
+	private void LoadDevices()
+	{
+		var devices = new ObservableCollection<Device>(DevicesRepository.GetDevices());
+		DevicesList.ItemsSource = devices;
 	}
 }
