@@ -188,4 +188,13 @@ public class DevicesRepository
 		device.Id = maxId + 1;
 		_devices.Add(device);
 	}
+
+	public static void DeleteDevice(int id)
+	{
+		var device = _devices.FirstOrDefault(x => x.Id.Equals(id));
+		if (device is not null)
+		{
+			_devices.Remove(device);
+		}
+	}
 }
