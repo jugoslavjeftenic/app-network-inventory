@@ -304,6 +304,15 @@ public partial class DeviceControl : ContentView
 			return;
 		}
 
+		if (GatewayOctet0Validator.IsNotValid ||
+			GatewayOctet1Validator.IsNotValid ||
+			GatewayOctet2Validator.IsNotValid ||
+			GatewayOctet3Validator.IsNotValid)
+		{
+			OnError?.Invoke(sender, "Gateway octets must have a value between 0 and 255.");
+			return;
+		}
+
 		if (PreferredDNSOctet0Validator.IsNotValid ||
 			PreferredDNSOctet1Validator.IsNotValid ||
 			PreferredDNSOctet2Validator.IsNotValid ||
