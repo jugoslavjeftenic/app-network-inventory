@@ -197,4 +197,18 @@ public class DevicesRepository
 			_devices.Remove(device);
 		}
 	}
+
+	public static List<Device> FilterDevices(string filterText)
+	{
+		var devices = _devices
+			.Where(x =>
+				(x.Name?.Contains(filterText, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.SerialNumber?.Contains(filterText, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.Location?.Contains(filterText, StringComparison.OrdinalIgnoreCase) ?? false) ||
+				(x.User?.Contains(filterText, StringComparison.OrdinalIgnoreCase) ?? false)
+			)
+			.ToList();
+
+		return devices;
+	}
 }

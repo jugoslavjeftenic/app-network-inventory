@@ -14,6 +14,7 @@ public partial class DevicesPage : ContentPage
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
+		FilterBar.Text = string.Empty;
 		LoadDevices();
 	}
 
@@ -51,6 +52,13 @@ public partial class DevicesPage : ContentPage
 	private void LoadDevices()
 	{
 		var devices = new ObservableCollection<Device>(DevicesRepository.GetDevices());
+		DevicesList.ItemsSource = devices;
+	}
+
+	private void FilterBar_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		var devices = new ObservableCollection<Device>
+			(DevicesRepository.FilterDevices(((SearchBar)sender).Text));
 		DevicesList.ItemsSource = devices;
 	}
 }

@@ -6,12 +6,19 @@
 
     <Grid
         ColumnDefinitions="*"
-        RowDefinitions="*,50"
+        RowDefinitions="50,*,50"
         Padding="5">
+
+        <SearchBar
+            Grid.Column="0"
+            Grid.Row="0"
+            x:Name="FilterBar"
+            Placeholder="Filter Devices by Name, Sn, Location or User"
+            TextChanged="FilterBar_TextChanged"/>
 
         <ListView
             Grid.Column="0"
-            Grid.Row="0"
+            Grid.Row="1"
             x:Name="DevicesList"
             RowHeight="50"
             Background="Transparent"
@@ -37,7 +44,7 @@
 
         <Button
             Grid.Column="0"
-            Grid.Row="1"
+            Grid.Row="2"
             Margin="5"
             x:Name="AddDeviceBtn"
             Text="Add Device"
