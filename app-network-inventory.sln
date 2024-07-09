@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkInventory.Maui", "NetworkInventory.Maui\NetworkInventory.Maui.csproj", "{BF8CB3B3-207C-4A00-86FF-77AC35E56C00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInventory.CoreBusiness", "NetworkInventory.CoreBusiness\NetworkInventory.CoreBusiness.csproj", "{7F06217E-B9FA-4234-A161-A4655CE2E389}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkInventory.CoreBusiness", "NetworkInventory.CoreBusiness\NetworkInventory.CoreBusiness.csproj", "{7F06217E-B9FA-4234-A161-A4655CE2E389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInventory.UseCases", "NetworkInventory.UseCases\NetworkInventory.UseCases.csproj", "{EFCABFFC-C62F-477A-8135-1495A2CE1256}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{7F06217E-B9FA-4234-A161-A4655CE2E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F06217E-B9FA-4234-A161-A4655CE2E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F06217E-B9FA-4234-A161-A4655CE2E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFCABFFC-C62F-477A-8135-1495A2CE1256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFCABFFC-C62F-477A-8135-1495A2CE1256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFCABFFC-C62F-477A-8135-1495A2CE1256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFCABFFC-C62F-477A-8135-1495A2CE1256}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
