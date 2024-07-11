@@ -1,4 +1,5 @@
 using NetworkInventory.Maui.Models;
+using NetworkInventory.UseCases.Interfaces;
 using System.Collections.ObjectModel;
 using Device = NetworkInventory.Maui.Models.Device;
 
@@ -6,9 +7,12 @@ namespace NetworkInventory.Maui.Views;
 
 public partial class DevicesPage : ContentPage
 {
-	public DevicesPage()
+	private readonly IViewDevicesUseCase _viewDevicesUseCase;
+
+	public DevicesPage(IViewDevicesUseCase viewDevicesUseCase)
 	{
 		InitializeComponent();
+		_viewDevicesUseCase = viewDevicesUseCase;
 	}
 
 	protected override void OnAppearing()
@@ -49,16 +53,19 @@ public partial class DevicesPage : ContentPage
 		}
 	}
 
-	private void LoadDevices()
+	private async void LoadDevices()
 	{
-		var devices = new ObservableCollection<Device>(DevicesRepository.GetDevices());
+		var devices = new ObservableCollection<CoreBusiness.Device>
+			(await _viewDevicesUseCase.ExecuteAsync(string.Empty));
 		DevicesList.ItemsSource = devices;
 	}
 
-	private void FilterBar_TextChanged(object sender, TextChangedEventArgs e)
+	private async void FilterBar_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		var devices = new ObservableCollection<Device>
-			(DevicesRepository.FilterDevices(((SearchBar)sender).Text));
+		//var devices = new ObservableCollection<Device>
+		//	(DevicesRepository.FilterDevices(((SearchBar)sender).Text));
+		var devices = new ObservableCollection<CoreBusiness.Device>
+			(await _viewDevicesUseCase.ExecuteAsync(((SearchBar)sender).Text));
 		DevicesList.ItemsSource = devices;
 	}
 }

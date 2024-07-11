@@ -138,6 +138,11 @@ public class DeviceInMemoryRepository : IDeviceRepository
 
 	public Task<List<Device>> GetDevicesAsync(string filterText)
 	{
+		if (string.IsNullOrWhiteSpace(filterText))
+		{
+			return Task.FromResult(_devices);
+		}
+
 		var devices = _devices
 			.Where(x =>
 				(x.Name?.Contains(filterText, StringComparison.OrdinalIgnoreCase) ?? false) ||

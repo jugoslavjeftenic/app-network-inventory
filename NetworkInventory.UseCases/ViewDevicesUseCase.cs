@@ -1,9 +1,10 @@
-﻿using NetworkInventory.UseCases.PluginInterfaces;
+﻿using NetworkInventory.UseCases.Interfaces;
+using NetworkInventory.UseCases.PluginInterfaces;
 using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.UseCases;
 
-public class ViewDevicesUseCase
+public class ViewDevicesUseCase : IViewDevicesUseCase
 {
 	private readonly IDeviceRepository _devicesRepository;
 
