@@ -12,7 +12,7 @@ public class Device
 	public string? PreferredDNS { get; set; } = "0.0.0.0";
 	public string? AlternateDNS { get; set; } = "0.0.0.0";
 	public string? Vlan { get; set; } = "";
-	public int UpstreamDeviceId { get; set; }
+	public string? UpstreamDevice { get; set; } = "";
 	public string? Location { get; set; } = "";
 	public string? User { get; set; } = "";
 

@@ -1,7 +1,7 @@
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
-using NetworkInventory.Maui.Models;
-using Device = NetworkInventory.Maui.Models.Device;
+using NetworkInventory.UseCases.Interfaces;
+using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.Views;
 
@@ -9,17 +9,22 @@ namespace NetworkInventory.Maui.Views;
 public partial class EditDevicePage : ContentPage
 {
 	private Device? _device;
+	private readonly IViewDeviceUseCase _viewDeviceUseCase;
 
-	public EditDevicePage()
+	public EditDevicePage(IViewDeviceUseCase viewDeviceUseCase)
 	{
 		InitializeComponent();
+		_viewDeviceUseCase = viewDeviceUseCase;
 	}
 
 	public string DeviceId
 	{
 		set
 		{
-			_device = DevicesRepository.GetDeviceById(int.Parse(value));
+			_device = _viewDeviceUseCase
+				.ExecuteAsync(int.Parse(value))
+				.GetAwaiter()
+				.GetResult();
 			if (_device is not null)
 			{
 				DeviceControl.Name = _device.Name;
@@ -30,7 +35,7 @@ public partial class EditDevicePage : ContentPage
 				DeviceControl.PreferredDNS = _device.PreferredDNS;
 				DeviceControl.AlternateDNS = _device.AlternateDNS;
 				DeviceControl.Vlan = _device.Vlan;
-				DeviceControl.UpstreamDeviceId = _device.UpstreamDeviceId;
+				DeviceControl.UpstreamDevice = _device.UpstreamDevice;
 				DeviceControl.Location = _device.Location;
 				DeviceControl.User = _device.User;
 			}
@@ -49,11 +54,11 @@ public partial class EditDevicePage : ContentPage
 			_device.PreferredDNS = DeviceControl.PreferredDNS ?? "";
 			_device.AlternateDNS = DeviceControl.AlternateDNS ?? "";
 			_device.Vlan = DeviceControl.Vlan ?? "";
-			_device.UpstreamDeviceId = DeviceControl.UpstreamDeviceId;
+			_device.UpstreamDevice = DeviceControl.UpstreamDevice ?? "";
 			_device.Location = DeviceControl.Location ?? "";
 			_device.User = DeviceControl.User ?? "";
 
-			DevicesRepository.UpdateDevice(_device.Id, _device);
+			//DevicesRepository.UpdateDevice(_device.Id, _device);
 			Shell.Current.GoToAsync("..");
 		}
 	}

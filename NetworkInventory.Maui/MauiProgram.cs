@@ -29,8 +29,10 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<IDeviceRepository, DeviceInMemoryRepository>();
 		builder.Services.AddSingleton<IViewDevicesUseCase, ViewDevicesUseCase>();
+		builder.Services.AddSingleton<IViewDeviceUseCase, ViewDeviceUseCase>();
 
 		builder.Services.AddSingleton<DevicesPage>();
+		builder.Services.AddSingleton<EditDevicePage>();
 
 		return builder.Build();
 	}

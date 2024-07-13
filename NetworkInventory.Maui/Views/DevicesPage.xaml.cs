@@ -1,7 +1,7 @@
 using NetworkInventory.Maui.Models;
 using NetworkInventory.UseCases.Interfaces;
 using System.Collections.ObjectModel;
-using Device = NetworkInventory.Maui.Models.Device;
+using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.Views;
 
@@ -26,7 +26,8 @@ public partial class DevicesPage : ContentPage
 	{
 		if (DevicesList.SelectedItem is not null)
 		{
-			await Shell.Current
+			await Shell
+				.Current
 				.GoToAsync($"{nameof(EditDevicePage)}?Id={((Device)DevicesList.SelectedItem).Id}");
 		}
 	}
@@ -55,16 +56,14 @@ public partial class DevicesPage : ContentPage
 
 	private async void LoadDevices()
 	{
-		var devices = new ObservableCollection<CoreBusiness.Device>
+		var devices = new ObservableCollection<Device>
 			(await _viewDevicesUseCase.ExecuteAsync(string.Empty));
 		DevicesList.ItemsSource = devices;
 	}
 
 	private async void FilterBar_TextChanged(object sender, TextChangedEventArgs e)
 	{
-		//var devices = new ObservableCollection<Device>
-		//	(DevicesRepository.FilterDevices(((SearchBar)sender).Text));
-		var devices = new ObservableCollection<CoreBusiness.Device>
+		var devices = new ObservableCollection<Device>
 			(await _viewDevicesUseCase.ExecuteAsync(((SearchBar)sender).Text));
 		DevicesList.ItemsSource = devices;
 	}

@@ -232,19 +232,15 @@ public partial class DeviceControl : ContentView
 		}
 	}
 
-	public int UpstreamDeviceId
+	public string? UpstreamDevice
 	{
 		get
 		{
-			if (int.TryParse(EntryUpstreamDevice.Text, out int entryUpstreamDeviceId))
-			{
-				return entryUpstreamDeviceId;
-			}
-			return 0;
+			return EntryUpstreamDevice.Text;
 		}
 		set
 		{
-			EntryUpstreamDevice.Text = value.ToString();
+			EntryUpstreamDevice.Text = value;
 		}
 	}
 

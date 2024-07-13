@@ -19,7 +19,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "SUL1-RT-RV340",
 			IPv4 = "10.1.1.1",
 			SubnetMask = "255.255.255.0",
-			UpstreamDeviceId = "Upstream Router",
+			UpstreamDevice = "Upstream Router",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -28,7 +28,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "10.1.2.1",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = "SUL1-RT-RV340",
+			UpstreamDevice = "SUL1-RT-RV340",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -37,7 +37,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "10.1.2.2",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = "SUL1-SW-SG350",
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -46,7 +46,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "10.1.2.10",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = "SUL1-SW-SG350",
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -55,7 +55,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "10.1.2.50",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = "SUL1-SW-SG350",
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 			User = "info-pult",
 		},
@@ -65,7 +65,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
-			UpstreamDeviceId = "SUL1-AP-240AC",
+			UpstreamDevice = "SUL1-AP-240AC",
 			Location = "Subotica - Lokacija 1",
 			User = "pera",
 		},
@@ -75,7 +75,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
-			UpstreamDeviceId = "SUL1-AP-240AC",
+			UpstreamDevice = "SUL1-AP-240AC",
 			Location = "Subotica - Lokacija 1",
 			User = "zdera",
 		},
@@ -135,6 +135,31 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Location = "Subotica - Lokacija 2",
 		},
 	];
+
+	public Task<Device> GetDeviceByIdAsync(int deviceId)
+	{
+		var device = _devices.FirstOrDefault(x => x.Id.Equals(deviceId));
+		if (device is not null)
+		{
+			return Task.FromResult(new Device()
+			{
+				Id = device.Id,
+				Name = device.Name,
+				SerialNumber = device.SerialNumber,
+				IPv4 = device.IPv4,
+				SubnetMask = device.SubnetMask,
+				Gateway = device.Gateway,
+				PreferredDNS = device.PreferredDNS,
+				AlternateDNS = device.AlternateDNS,
+				Vlan = device.Vlan,
+				UpstreamDevice = device.UpstreamDevice,
+				Location = device.Location,
+				User = device.User
+			});
+		}
+
+		return Task.FromResult(new Device());
+	}
 
 	public Task<List<Device>> GetDevicesAsync(string filterText)
 	{

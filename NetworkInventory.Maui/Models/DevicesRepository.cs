@@ -8,7 +8,6 @@ public class DevicesRepository
 			Name = "Upstream Router",
 			IPv4 = "203.0.113.1",
 			SubnetMask = "255.255.255.0",
-			UpstreamDeviceId = 0,
 			Location = "ISP",
 			User = "ISP",
 		},
@@ -17,7 +16,7 @@ public class DevicesRepository
 			Name = "SUL1-RT-RV340",
 			IPv4 = "10.1.1.1",
 			SubnetMask = "255.255.255.0",
-			UpstreamDeviceId = 1,
+			UpstreamDevice = "Upstream Router",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -26,7 +25,7 @@ public class DevicesRepository
 			IPv4 = "10.1.2.1",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = 2,
+			UpstreamDevice = "SUL1-RT-RV340",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -35,7 +34,7 @@ public class DevicesRepository
 			IPv4 = "10.1.2.2",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = 3,
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -44,7 +43,7 @@ public class DevicesRepository
 			IPv4 = "10.1.2.10",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = 3,
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 		},
 		new Device {
@@ -53,7 +52,7 @@ public class DevicesRepository
 			IPv4 = "10.1.2.50",
 			SubnetMask = "255.255.255.0",
 			Gateway = "10.1.1.1",
-			UpstreamDeviceId = 3,
+			UpstreamDevice = "SUL1-SW-SG350",
 			Location = "Subotica - Lokacija 1",
 			User = "info-pult",
 		},
@@ -63,7 +62,7 @@ public class DevicesRepository
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
-			UpstreamDeviceId = 4,
+			UpstreamDevice = "SUL1-AP-240AC",
 			Location = "Subotica - Lokacija 1",
 			User = "pera",
 		},
@@ -73,7 +72,7 @@ public class DevicesRepository
 			IPv4 = "DHCP",
 			SubnetMask = "DHCP",
 			Gateway = "DHCP",
-			UpstreamDeviceId = 4,
+			UpstreamDevice = "SUL1-AP-240AC",
 			Location = "Subotica - Lokacija 1",
 			User = "zdera",
 		},
@@ -152,7 +151,7 @@ public class DevicesRepository
 				PreferredDNS = device.PreferredDNS,
 				AlternateDNS = device.AlternateDNS,
 				Vlan = device.Vlan,
-				UpstreamDeviceId = device.UpstreamDeviceId,
+				UpstreamDevice = device.UpstreamDevice,
 				Location = device.Location,
 				User = device.User
 			};
@@ -176,7 +175,7 @@ public class DevicesRepository
 			deviceToUpdate.PreferredDNS = device.PreferredDNS;
 			deviceToUpdate.AlternateDNS = device.AlternateDNS;
 			deviceToUpdate.Vlan = device.Vlan;
-			deviceToUpdate.UpstreamDeviceId = device.UpstreamDeviceId;
+			deviceToUpdate.UpstreamDevice = device.UpstreamDevice;
 			deviceToUpdate.Location = device.Location;
 			deviceToUpdate.User = device.User;
 		}

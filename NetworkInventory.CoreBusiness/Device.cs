@@ -21,7 +21,7 @@ public class Device
 	public string PreferredDNS { get; set; } = "";
 	public string AlternateDNS { get; set; } = "";
 	public string Vlan { get; set; } = "";
-	public string UpstreamDeviceId { get; set; } = "";
+	public string UpstreamDevice { get; set; } = "";
 	public string Location { get; set; } = "";
 	public string User { get; set; } = "";
 

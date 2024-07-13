@@ -23,7 +23,7 @@ public partial class AddDevicePage : ContentPage
 			PreferredDNS = DeviceControl.PreferredDNS,
 			AlternateDNS = DeviceControl.AlternateDNS,
 			Vlan = DeviceControl.Vlan,
-			UpstreamDeviceId = DeviceControl.UpstreamDeviceId,
+			UpstreamDevice = DeviceControl.UpstreamDevice,
 			Location = DeviceControl.Location,
 			User = DeviceControl.User,
 		});
