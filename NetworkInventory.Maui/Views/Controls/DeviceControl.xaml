@@ -70,8 +70,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="IPv4Octet0Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -89,8 +87,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="IPv4Octet1Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -108,8 +104,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="IPv4Octet2Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -127,8 +121,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="IPv4Octet3Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -152,8 +144,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="SubnetMaskOctet0Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -171,8 +161,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="SubnetMaskOctet1Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -190,8 +178,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="SubnetMaskOctet2Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -209,8 +195,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="SubnetMaskOctet3Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -234,8 +218,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="GatewayOctet0Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -253,8 +235,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="GatewayOctet1Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -272,8 +252,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="GatewayOctet2Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -291,8 +269,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="GatewayOctet3Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -316,8 +292,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="PreferredDNSOctet0Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -335,8 +309,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="PreferredDNSOctet1Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -354,8 +326,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="PreferredDNSOctet2Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -373,8 +343,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="PreferredDNSOctet3Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -398,8 +366,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="AlternateDNSOctet0Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -417,8 +383,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="AlternateDNSOctet1Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -436,8 +400,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="AlternateDNSOctet2Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>
@@ -455,8 +417,6 @@
                             <toolkit:TextValidationBehavior
                             x:Name="AlternateDNSOctet3Validator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                            MinimumLength="1"
-                            MaximumLength="3"
                             RegexPattern="^((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))$"/>
                         </Entry.Behaviors>
                     </Entry>

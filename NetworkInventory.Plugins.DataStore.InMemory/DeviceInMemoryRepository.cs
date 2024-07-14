@@ -136,6 +136,15 @@ public class DeviceInMemoryRepository : IDeviceRepository
 		},
 	];
 
+	public Task AddDeviceAsync(Device device)
+	{
+		var maxId = _devices.Select(x => x.Id).DefaultIfEmpty(0).Max();
+		device.Id = maxId + 1;
+		_devices.Add(device);
+
+		return Task.CompletedTask;
+	}
+
 	public Task<Device> GetDeviceByIdAsync(int deviceId)
 	{
 		var device = _devices.FirstOrDefault(x => x.Id.Equals(deviceId));

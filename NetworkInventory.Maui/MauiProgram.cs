@@ -31,9 +31,11 @@ public static class MauiProgram
 		builder.Services.AddSingleton<IViewDevicesUseCase, ViewDevicesUseCase>();
 		builder.Services.AddSingleton<IViewDeviceUseCase, ViewDeviceUseCase>();
 		builder.Services.AddTransient<IEditDeviceUseCase, EditDeviceUseCase>();
+		builder.Services.AddTransient<IAddDeviceUseCase, AddDeviceUseCase>();
 
 		builder.Services.AddSingleton<DevicesPage>();
 		builder.Services.AddSingleton<EditDevicePage>();
+		builder.Services.AddSingleton<AddDevicePage>();
 
 		return builder.Build();
 	}
