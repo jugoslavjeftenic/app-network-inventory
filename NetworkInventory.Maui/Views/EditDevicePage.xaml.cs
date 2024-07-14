@@ -10,11 +10,13 @@ public partial class EditDevicePage : ContentPage
 {
 	private Device? _device;
 	private readonly IViewDeviceUseCase _viewDeviceUseCase;
+	private readonly IEditDeviceUseCase _editDeviceUseCase;
 
-	public EditDevicePage(IViewDeviceUseCase viewDeviceUseCase)
+	public EditDevicePage(IViewDeviceUseCase viewDeviceUseCase, IEditDeviceUseCase editDeviceUseCase)
 	{
 		InitializeComponent();
 		_viewDeviceUseCase = viewDeviceUseCase;
+		_editDeviceUseCase = editDeviceUseCase;
 	}
 
 	public string DeviceId
@@ -42,7 +44,7 @@ public partial class EditDevicePage : ContentPage
 		}
 	}
 
-	private void DeviceControl_OnSave(object sender, EventArgs e)
+	private async void DeviceControl_OnSave(object sender, EventArgs e)
 	{
 		if (_device is not null)
 		{
@@ -58,8 +60,8 @@ public partial class EditDevicePage : ContentPage
 			_device.Location = DeviceControl.Location ?? "";
 			_device.User = DeviceControl.User ?? "";
 
-			//DevicesRepository.UpdateDevice(_device.Id, _device);
-			Shell.Current.GoToAsync("..");
+			await _editDeviceUseCase.ExecuteAsync(_device.Id, _device);
+			await Shell.Current.GoToAsync("..");
 		}
 	}
 

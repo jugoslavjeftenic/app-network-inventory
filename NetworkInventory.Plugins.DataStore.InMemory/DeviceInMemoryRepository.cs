@@ -179,4 +179,27 @@ public class DeviceInMemoryRepository : IDeviceRepository
 
 		return Task.FromResult(devices);
 	}
+
+	public Task UpdateDeviceAsync(int deviceId, Device device)
+	{
+		if (deviceId.Equals(device.Id) is false) return Task.CompletedTask;
+
+		var deviceToUpdate = _devices.FirstOrDefault(x => x.Id.Equals(deviceId));
+		if (deviceToUpdate is not null)
+		{
+			deviceToUpdate.Name = device.Name;
+			deviceToUpdate.SerialNumber = device.SerialNumber;
+			deviceToUpdate.IPv4 = device.IPv4;
+			deviceToUpdate.SubnetMask = device.SubnetMask;
+			deviceToUpdate.Gateway = device.Gateway;
+			deviceToUpdate.PreferredDNS = device.PreferredDNS;
+			deviceToUpdate.AlternateDNS = device.AlternateDNS;
+			deviceToUpdate.Vlan = device.Vlan;
+			deviceToUpdate.UpstreamDevice = device.UpstreamDevice;
+			deviceToUpdate.Location = device.Location;
+			deviceToUpdate.User = device.User;
+		}
+
+		return Task.CompletedTask;
+	}
 }
