@@ -145,6 +145,17 @@ public class DeviceInMemoryRepository : IDeviceRepository
 		return Task.CompletedTask;
 	}
 
+	public Task DeleteDeviceAsync(int deviceId)
+	{
+		var device = _devices.FirstOrDefault(x => x.Id.Equals(deviceId));
+		if (device is not null)
+		{
+			_devices.Remove(device);
+		}
+
+		return Task.CompletedTask;
+	}
+
 	public Task<Device> GetDeviceByIdAsync(int deviceId)
 	{
 		var device = _devices.FirstOrDefault(x => x.Id.Equals(deviceId));

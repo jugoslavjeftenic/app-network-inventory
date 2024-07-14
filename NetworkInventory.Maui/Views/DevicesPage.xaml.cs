@@ -8,11 +8,14 @@ namespace NetworkInventory.Maui.Views;
 public partial class DevicesPage : ContentPage
 {
 	private readonly IViewDevicesUseCase _viewDevicesUseCase;
+	private readonly IDeleteDeviceUseCase _deleteDeviceUseCase;
 
-	public DevicesPage(IViewDevicesUseCase viewDevicesUseCase)
+	public DevicesPage
+		(IViewDevicesUseCase viewDevicesUseCase, IDeleteDeviceUseCase deleteDeviceUseCase)
 	{
 		InitializeComponent();
 		_viewDevicesUseCase = viewDevicesUseCase;
+		_deleteDeviceUseCase = deleteDeviceUseCase;
 	}
 
 	protected override void OnAppearing()
@@ -42,14 +45,14 @@ public partial class DevicesPage : ContentPage
 		Shell.Current.GoToAsync(nameof(AddDevicePage));
 	}
 
-	private void DeleteMenuItem_Clicked(object sender, EventArgs e)
+	private async void DeleteMenuItem_Clicked(object sender, EventArgs e)
 	{
 		var menuItem = sender as MenuItem;
 		var device = menuItem?.CommandParameter as Device;
 
 		if (device is not null)
 		{
-			DevicesRepository.DeleteDevice(device.Id);
+			await _deleteDeviceUseCase.ExecuteAsync(device.Id);
 			LoadDevices();
 		}
 	}
