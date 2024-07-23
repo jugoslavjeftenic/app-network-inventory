@@ -10,7 +10,7 @@ namespace NetworkInventory.Maui.Views;
 public partial class EditDevicePage : ContentPage
 {
 	private readonly DeviceViewModel _deviceViewModel;
-	private Device? _device;
+	//private Device? _device;
 	//private readonly IViewDeviceUseCase _viewDeviceUseCase;
 	//private readonly IEditDeviceUseCase _editDeviceUseCase;
 

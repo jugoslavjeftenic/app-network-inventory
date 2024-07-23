@@ -5,12 +5,14 @@
              x:Class="NetworkInventory.Maui.Views.EditDevicePage"
              Title="Edit Device">
 
-    <VerticalStackLayout>
+    <!--<VerticalStackLayout>
         <Label
             Text="{Binding Device.Name}"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
-    </VerticalStackLayout>
+    </VerticalStackLayout>-->
+
+    <controls:DeviceControl BindingContext="{Binding .}"/>
 
     <!--<controls:DeviceControl
         x:Name="DeviceControl"
