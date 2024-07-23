@@ -45,7 +45,7 @@
             </ListView.ItemTemplate>
         </ListView>-->
 
-        <ListView
+        <!--<ListView
             Grid.Column="0"
             Grid.Row="1"
             RowHeight="50"
@@ -66,6 +66,40 @@
                                 CommandParameter="{Binding Id}"/>
                         </TextCell.ContextActions>
                     </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <ListView
+            Grid.Column="0"
+            Grid.Row="1"
+            RowHeight="50"
+            x:Name="DevicesList"
+            Background="Transparent"
+            SeparatorColor="Silver"
+            ItemsSource="{Binding Devices}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="m:Device">
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                                Text="Delete"
+                                IsDestructive="True"
+                                Command="{Binding Source={x:Reference DevicesList}, Path=BindingContext.DeleteDeviceCommand}"
+                                CommandParameter="{Binding Id}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout
+                            Orientation="Vertical"
+                            Margin="0,5">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding CIDR}" TextColor="Gray"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:Reference DevicesList}, Path=BindingContext.GoToEditDeviceCommand}"
+                                    CommandParameter="{Binding Id}"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

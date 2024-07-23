@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using NetworkInventory.Maui.Views;
 using NetworkInventory.UseCases.Interfaces;
 using System.Collections.ObjectModel;
 using Device = NetworkInventory.CoreBusiness.Device;
@@ -34,5 +35,11 @@ public partial class DevicesViewModel(
 	{
 		await _deleteDeviceUseCase.ExecuteAsync(deviceId);
 		await LoadDevicesAsync();
+	}
+
+	[RelayCommand]
+	public async Task GoToEditDevice(int deviceId)
+	{
+		await Shell.Current.GoToAsync($"{nameof(EditDevicePage)}?Id={deviceId}");
 	}
 }

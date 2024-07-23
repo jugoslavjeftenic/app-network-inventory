@@ -1,13 +1,16 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using NetworkInventory.Maui.Models;
-using Device = NetworkInventory.Maui.Models.Device;
+using NetworkInventory.UseCases.Interfaces;
+using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.ViewModels;
 
 public partial class DeviceViewModel : ObservableObject
 {
 	private Device? _device;
+	private readonly IViewDeviceUseCase _viewDeviceUseCase;
+
 	public Device? Device
 	{
 		get => _device;
@@ -17,22 +20,23 @@ public partial class DeviceViewModel : ObservableObject
 		}
 	}
 
-	public DeviceViewModel()
+	public DeviceViewModel(IViewDeviceUseCase viewDeviceUseCase)
 	{
 		Device = new();
+		_viewDeviceUseCase = viewDeviceUseCase;
 	}
 
-	public void LoadDevice(int deviceId)
+	public async Task LoadDevice(int deviceId)
 	{
-		Device = DevicesRepository.GetDeviceById(deviceId);
+		Device = await _viewDeviceUseCase.ExecuteAsync(deviceId);
 	}
 
-	[RelayCommand]
-	public void SaveDevice()
-	{
-		if (Device is not null)
-		{
-			DevicesRepository.UpdateDevice(Device.Id, Device);
-		}
-	}
+	//[RelayCommand]
+	//public void SaveDevice()
+	//{
+	//	if (Device is not null)
+	//	{
+	//		DevicesRepository.UpdateDevice(Device.Id, Device);
+	//	}
+	//}
 }
