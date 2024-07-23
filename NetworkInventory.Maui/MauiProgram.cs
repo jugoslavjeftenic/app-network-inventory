@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using NetworkInventory.Maui.ViewModels;
 using NetworkInventory.Maui.Views;
 using NetworkInventory.Plugins.DataStore.InMemory;
 using NetworkInventory.UseCases;
@@ -33,6 +34,8 @@ public static class MauiProgram
 		builder.Services.AddTransient<IEditDeviceUseCase, EditDeviceUseCase>();
 		builder.Services.AddTransient<IAddDeviceUseCase, AddDeviceUseCase>();
 		builder.Services.AddTransient<IDeleteDeviceUseCase, DeleteDeviceUseCase>();
+
+		builder.Services.AddSingleton<DevicesViewModel>();
 
 		builder.Services.AddSingleton<DevicesPage>();
 		builder.Services.AddSingleton<EditDevicePage>();

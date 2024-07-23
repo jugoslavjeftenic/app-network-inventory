@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:NetworkInventory.Maui.ViewModels"
+             xmlns:m="clr-namespace:NetworkInventory.CoreBusiness;assembly=NetworkInventory.CoreBusiness"
+             x:DataType="vm:DevicesViewModel"
              x:Class="NetworkInventory.Maui.Views.DevicesPage"
              Title="Devices">
 
@@ -13,10 +16,9 @@
             Grid.Column="0"
             Grid.Row="0"
             x:Name="FilterBar"
-            Placeholder="Filter Devices by Name, Sn, Location or User"
-            TextChanged="FilterBar_TextChanged"/>
+            Placeholder="Filter Devices by Name, Sn, Location or User"/>
 
-        <ListView
+        <!--<ListView
             Grid.Column="0"
             Grid.Row="1"
             x:Name="DevicesList"
@@ -40,14 +42,32 @@
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
+        <CollectionView
+            Grid.Column="0"
+            Grid.Row="1"
+            ItemsSource="{Binding Devices}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="m:Device">
+                    <StackLayout>
+                        <Frame Margin="0,5">
+                            <StackLayout
+                                Orientation="Vertical"
+                                Spacing="5">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding CIDR}"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <Button
             Grid.Column="0"
             Grid.Row="2"
             Margin="5"
             x:Name="AddDeviceBtn"
-            Text="Add Device"
-            Clicked="AddDeviceBtn_Clicked"/>
+            Text="Add Device"/>
     </Grid>
 </ContentPage>
