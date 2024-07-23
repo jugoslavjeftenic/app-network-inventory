@@ -1,12 +1,17 @@
-﻿using NetworkInventory.UseCases.Interfaces;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using NetworkInventory.UseCases.Interfaces;
 using System.Collections.ObjectModel;
 using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.ViewModels;
 
-public class DevicesViewModel(IViewDevicesUseCase viewDevicesUseCase)
+public partial class DevicesViewModel(
+	IViewDevicesUseCase viewDevicesUseCase,
+	IDeleteDeviceUseCase deleteDeviceUseCase) : ObservableObject
 {
 	private readonly IViewDevicesUseCase _viewDevicesUseCase = viewDevicesUseCase;
+	private readonly IDeleteDeviceUseCase _deleteDeviceUseCase = deleteDeviceUseCase;
 
 	public ObservableCollection<Device> Devices { get; set; } = [];
 
@@ -22,5 +27,12 @@ public class DevicesViewModel(IViewDevicesUseCase viewDevicesUseCase)
 				Devices.Add(device);
 			}
 		}
+	}
+
+	[RelayCommand]
+	public async Task DeleteDevice(int deviceId)
+	{
+		await _deleteDeviceUseCase.ExecuteAsync(deviceId);
+		await LoadDevicesAsync();
 	}
 }
