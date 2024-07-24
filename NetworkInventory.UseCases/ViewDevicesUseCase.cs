@@ -4,14 +4,9 @@ using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.UseCases;
 
-public class ViewDevicesUseCase : IViewDevicesUseCase
+public class ViewDevicesUseCase(IDeviceRepository devicesRepository) : IViewDevicesUseCase
 {
-	private readonly IDeviceRepository _devicesRepository;
-
-	public ViewDevicesUseCase(IDeviceRepository devicesRepository)
-	{
-		_devicesRepository = devicesRepository;
-	}
+	private readonly IDeviceRepository _devicesRepository = devicesRepository;
 
 	public async Task<List<Device>> ExecuteAsync(string filterText)
 	{

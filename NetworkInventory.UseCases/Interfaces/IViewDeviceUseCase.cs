@@ -1,7 +1,7 @@
 ﻿namespace NetworkInventory.UseCases.Interfaces
 {
-    public interface IViewDeviceUseCase
-    {
-        Task<CoreBusiness.Device> ExecuteAsync(int deviceId);
-    }
+	public interface IViewDeviceUseCase
+	{
+		Task<CoreBusiness.Device> ExecuteAsync(int deviceId);
+	}
 }

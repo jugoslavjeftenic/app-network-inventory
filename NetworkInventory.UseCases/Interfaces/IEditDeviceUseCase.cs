@@ -1,7 +1,6 @@
-﻿namespace NetworkInventory.UseCases.Interfaces
+﻿namespace NetworkInventory.UseCases.Interfaces;
+
+public interface IEditDeviceUseCase
 {
-    public interface IEditDeviceUseCase
-    {
-        Task ExecuteAsync(int deviceId, CoreBusiness.Device device);
-    }
+	Task ExecuteAsync(int deviceId, CoreBusiness.Device device);
 }

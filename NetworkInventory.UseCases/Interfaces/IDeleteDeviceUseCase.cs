@@ -1,7 +1,6 @@
-﻿namespace NetworkInventory.UseCases.Interfaces
+﻿namespace NetworkInventory.UseCases.Interfaces;
+
+public interface IDeleteDeviceUseCase
 {
-    public interface IDeleteDeviceUseCase
-    {
-        Task ExecuteAsync(int deviceId);
-    }
+	Task ExecuteAsync(int deviceId);
 }
