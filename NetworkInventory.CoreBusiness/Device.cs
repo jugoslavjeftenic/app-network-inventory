@@ -14,18 +14,43 @@ public class Device
 	public string Make { get; set; } = "";
 	public string SerialNumber { get; set; } = "";
 	public string MACAddress { get; set; } = "";
-	public string IPv4 { get; set; } = "";
-	public string SubnetMask { get; set; } = "";
-	public string CIDR { get { return $"{IPv4}/{DecimalSubnetMaskToCIDR(SubnetMask)}"; } }
-	public string Gateway { get; set; } = "";
-	public string PreferredDNS { get; set; } = "";
-	public string AlternateDNS { get; set; } = "";
+	public int[] IPv4Octets { get; set; } = new int[4];
+	public int[] SubnetMaskOctets { get; set; } = new int[4];
+	public int[] GatewayOctets { get; set; } = new int[4];
+	public int[] PreferredDNSOctets { get; set; } = new int[4];
+	public int[] AlternateDNSOctets { get; set; } = new int[4];
 	public string Vlan { get; set; } = "";
 	public string UpstreamDevice { get; set; } = "";
 	public string Location { get; set; } = "";
 	public string User { get; set; } = "";
 
-	private static int DecimalSubnetMaskToCIDR(string? SubnetMask)
+	public string GetIPv4Address() => GetAddressStringFromOctets(IPv4Octets);
+	public string GetSubnetMask() => GetAddressStringFromOctets(SubnetMaskOctets);
+	public string GetGateway() => GetAddressStringFromOctets(GatewayOctets);
+	public string GetPreferredDNS() => GetAddressStringFromOctets(PreferredDNSOctets);
+	public string GetAlternateDNS() => GetAddressStringFromOctets(AlternateDNSOctets);
+
+	public string GetCIDR() => $"{GetIPv4Address}/{SubnetMaskToCIDR(GetSubnetMask())}";
+
+	private static string GetAddressStringFromOctets(int[] octets)
+	{
+		if (octets.Length != 4)
+		{
+			throw new InvalidOperationException("The address array must contain exactly 4 elements.");
+		}
+
+		foreach (int octet in octets)
+		{
+			if (octet < 0 || octet > 255)
+			{
+				throw new ArgumentOutOfRangeException("Each octet must be in the range 0 to 255.");
+			}
+		}
+
+		return string.Join(".", octets);
+	}
+
+	private static int SubnetMaskToCIDR(string? SubnetMask)
 	{
 		if (string.IsNullOrWhiteSpace(SubnetMask))
 		{
