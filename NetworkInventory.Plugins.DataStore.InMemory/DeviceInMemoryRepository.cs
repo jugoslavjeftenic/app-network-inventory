@@ -11,7 +11,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Edge router",
 			SerialNumber = "12345ABC",
 			IPv4Address = "192.168.0.1",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Server Room",
 			User = "admin"
 		},
@@ -20,7 +20,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 Switch",
 			SerialNumber = "234567890",
 			IPv4Address = "192.168.1.1",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "admin"
 		},
@@ -29,7 +29,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 Switch",
 			SerialNumber = "23ABC7890",
 			IPv4Address = "192.168.2.1",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "admin"
 		},
@@ -38,7 +38,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 AP",
 			SerialNumber = "23ABC0",
 			IPv4Address = "192.168.1.2",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "admin"
 		},
@@ -47,7 +47,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 AP",
 			SerialNumber = "23ABC0FA4",
 			IPv4Address = "192.168.2.2",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "admin"
 		},
@@ -56,7 +56,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 Printer",
 			SerialNumber = "2CDBC0FA4",
 			IPv4Address = "192.168.1.10",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "admin"
 		},
@@ -65,7 +65,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 Printer",
 			SerialNumber = "2CDBC04",
 			IPv4Address = "192.168.2.10",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "admin"
 		},
@@ -74,7 +74,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 Desktop",
 			SerialNumber = "2CDBC04",
 			IPv4Address = "192.168.1.50",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "info-pult"
 		},
@@ -83,7 +83,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 Desktop",
 			SerialNumber = "2C234DBC04",
 			IPv4Address = "192.168.2.50",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "info-pult"
 		},
@@ -92,7 +92,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 Laptop1",
 			SerialNumber = "12345",
 			IPv4Address = "192.168.1.100",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "user1"
 		},
@@ -101,7 +101,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 1 Laptop2",
 			SerialNumber = "12345",
 			IPv4Address = "192.168.1.101",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 1",
 			User = "user2"
 		},
@@ -110,7 +110,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 Laptop1",
 			SerialNumber = "12345",
 			IPv4Address = "192.168.2.100",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "user3"
 		},
@@ -119,7 +119,7 @@ public class DeviceInMemoryRepository : IDeviceRepository
 			Name = "Location 2 Laptop2",
 			SerialNumber = "12345",
 			IPv4Address = "192.168.2.101",
-			SubnetMask = "255.255.255.0]",
+			SubnetMask = "255.255.255.0",
 			Location = "Location 2",
 			User = "user4"
 		},
