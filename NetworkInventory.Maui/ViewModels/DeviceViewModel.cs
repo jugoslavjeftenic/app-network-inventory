@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using NetworkInventory.Maui.Models;
 using NetworkInventory.UseCases.Interfaces;
 using Device = NetworkInventory.CoreBusiness.Device;
 
