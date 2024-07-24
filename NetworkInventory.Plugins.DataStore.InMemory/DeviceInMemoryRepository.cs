@@ -6,21 +6,38 @@ namespace NetworkInventory.Plugins.DataStore.InMemory;
 public class DeviceInMemoryRepository : IDeviceRepository
 {
 	private readonly static List<Device> _devices = [
+		//new Device {
+		//	Id = 1,
+		//	Name = "Router",
+		//	DeviceType = "Networking",
+		//	Manufacturer = "Cisco",
+		//	Make = "RV340",
+		//	SerialNumber = "12345ABC",
+		//	MACAddress = "00:1A:2B:3C:4D:5E",
+		//	IPv4Octets = [ 10, 1, 1, 2 ],
+		//	SubnetMaskOctets = [ 255, 255, 255, 0 ],
+		//	GatewayOctets = [ 10, 1, 1, 1 ],
+		//	PreferredDNSOctets = [ 1, 1, 1, 1 ],
+		//	AlternateDNSOctets = [ 1, 1, 1, 2 ],
+		//	Vlan = "1",
+		//	UpstreamDevice = "Modem",
+		//	Location = "Server Room",
+		//	User = "Admin"
+		//},
 		new Device {
 			Id = 1,
-			Name = "Upstream Router",
-			GetIPv4Address = "203.0.113.1",
-			GetSubnetMask = "255.255.255.0",
-			Location = "ISP",
-			User = "ISP",
-		},
-		new Device {
-			Id = 2,
 			Name = "SUL1-RT-RV340",
-			GetIPv4Address = "10.1.1.1",
-			GetSubnetMask = "255.255.255.0",
-			UpstreamDevice = "Upstream Router",
-			Location = "Subotica - Lokacija 1",
+			DeviceType = "Networking",
+			Manufacturer = "Cisco",
+			Make = "RV340",
+			SerialNumber = "12345ABC",
+			MACAddress = "00:1A:2B:3C:4D:5E",
+			IPv4Octets = [10, 1, 1, 1],
+			SubnetMaskOctets = [255, 255, 255, 0],
+			GatewayOctets = [203, 0, 113, 1],
+			UpstreamDevice = "ISP modem",
+			Location = "Subotica - Server Room",
+			User = "Admin"
 		},
 		new Device {
 			Id = 3,
