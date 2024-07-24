@@ -6,150 +6,122 @@ namespace NetworkInventory.Plugins.DataStore.InMemory;
 public class DeviceInMemoryRepository : IDeviceRepository
 {
 	private readonly static List<Device> _devices = [
-		//new Device {
-		//	Id = 1,
-		//	Name = "Router",
-		//	DeviceType = "Networking",
-		//	Manufacturer = "Cisco",
-		//	Make = "RV340",
-		//	SerialNumber = "12345ABC",
-		//	MACAddress = "00:1A:2B:3C:4D:5E",
-		//	IPv4Octets = [ 10, 1, 1, 2 ],
-		//	SubnetMaskOctets = [ 255, 255, 255, 0 ],
-		//	GatewayOctets = [ 10, 1, 1, 1 ],
-		//	PreferredDNSOctets = [ 1, 1, 1, 1 ],
-		//	AlternateDNSOctets = [ 1, 1, 1, 2 ],
-		//	Vlan = "1",
-		//	UpstreamDevice = "Modem",
-		//	Location = "Server Room",
-		//	User = "Admin"
-		//},
 		new Device {
 			Id = 1,
-			Name = "SUL1-RT-RV340",
-			DeviceType = "Networking",
-			Manufacturer = "Cisco",
-			Make = "RV340",
+			Name = "Edge router",
 			SerialNumber = "12345ABC",
-			MACAddress = "00:1A:2B:3C:4D:5E",
-			IPv4Octets = [10, 1, 1, 1],
-			SubnetMaskOctets = [255, 255, 255, 0],
-			GatewayOctets = [203, 0, 113, 1],
-			UpstreamDevice = "ISP modem",
-			Location = "Subotica - Server Room",
-			User = "Admin"
+			IPv4Address = "192.168.0.1",
+			SubnetMask = "255.255.255.0]",
+			Location = "Server Room",
+			User = "admin"
+		},
+		new Device {
+			Id = 2,
+			Name = "Location 1 Switch",
+			SerialNumber = "234567890",
+			IPv4Address = "192.168.1.1",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "admin"
 		},
 		new Device {
 			Id = 3,
-			Name = "SUL1-SW-SG350",
-			GetIPv4Address = "10.1.2.1",
-			GetSubnetMask = "255.255.255.0",
-			GetGateway = "10.1.1.1",
-			UpstreamDevice = "SUL1-RT-RV340",
-			Location = "Subotica - Lokacija 1",
+			Name = "Location 2 Switch",
+			SerialNumber = "23ABC7890",
+			IPv4Address = "192.168.2.1",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "admin"
 		},
 		new Device {
 			Id = 4,
-			Name = "SUL1-AP-240AC",
-			GetIPv4Address = "10.1.2.2",
-			GetSubnetMask = "255.255.255.0",
-			GetGateway = "10.1.1.1",
-			UpstreamDevice = "SUL1-SW-SG350",
-			Location = "Subotica - Lokacija 1",
+			Name = "Location 1 AP",
+			SerialNumber = "23ABC0",
+			IPv4Address = "192.168.1.2",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "admin"
 		},
 		new Device {
 			Id = 5,
-			Name = "SUL1-PR-MFP521",
-			GetIPv4Address = "10.1.2.10",
-			GetSubnetMask = "255.255.255.0",
-			GetGateway = "10.1.1.1",
-			UpstreamDevice = "SUL1-SW-SG350",
-			Location = "Subotica - Lokacija 1",
+			Name = "Location 2 AP",
+			SerialNumber = "23ABC0FA4",
+			IPv4Address = "192.168.2.2",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "admin"
 		},
 		new Device {
 			Id = 6,
-			Name = "SUL1-D19-100001",
-			GetIPv4Address = "10.1.2.50",
-			GetSubnetMask = "255.255.255.0",
-			GetGateway = "10.1.1.1",
-			UpstreamDevice = "SUL1-SW-SG350",
-			Location = "Subotica - Lokacija 1",
-			User = "info-pult",
+			Name = "Location 1 Printer",
+			SerialNumber = "2CDBC0FA4",
+			IPv4Address = "192.168.1.10",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "admin"
 		},
 		new Device {
 			Id = 7,
-			Name = "SUL1-L365-200001",
-			GetIPv4Address = "DHCP",
-			GetSubnetMask = "DHCP",
-			GetGateway = "DHCP",
-			UpstreamDevice = "SUL1-AP-240AC",
-			Location = "Subotica - Lokacija 1",
-			User = "pera",
+			Name = "Location 2 Printer",
+			SerialNumber = "2CDBC04",
+			IPv4Address = "192.168.2.10",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "admin"
 		},
 		new Device {
 			Id = 8,
-			Name = "SUL1-L365-200002",
-			GetIPv4Address = "DHCP",
-			GetSubnetMask = "DHCP",
-			GetGateway = "DHCP",
-			UpstreamDevice = "SUL1-AP-240AC",
-			Location = "Subotica - Lokacija 1",
-			User = "zdera",
+			Name = "Location 1 Desktop",
+			SerialNumber = "2CDBC04",
+			IPv4Address = "192.168.1.50",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "info-pult"
 		},
 		new Device {
 			Id = 9,
-			Name = "SUL1-LNO-200003",
-			GetIPv4Address = "10.1.2.203",
-			GetSubnetMask = "255.255.255.0",
+			Name = "Location 2 Desktop",
+			SerialNumber = "2C234DBC04",
+			IPv4Address = "192.168.2.50",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "info-pult"
 		},
 		new Device {
 			Id = 10,
-			Name = "SUL2-RT-RV340",
-			GetIPv4Address = "10.1.3.1",
-			GetSubnetMask = "255.255.255.0",
-			Location = "Subotica - Lokacija 2",
+			Name = "Location 1 Laptop1",
+			SerialNumber = "12345",
+			IPv4Address = "192.168.1.100",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "user1"
 		},
 		new Device {
 			Id = 11,
-			Name = "SUL2-DNO-100002",
-			GetIPv4Address = "10.1.3.50",
-			GetSubnetMask = "255.255.255.0",
+			Name = "Location 1 Laptop2",
+			SerialNumber = "12345",
+			IPv4Address = "192.168.1.101",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 1",
+			User = "user2"
 		},
 		new Device {
 			Id = 12,
-			Name = "SUL2-L365-200004",
-			GetIPv4Address = "10.1.3.204",
-			GetSubnetMask = "255.255.255.0",
+			Name = "Location 2 Laptop1",
+			SerialNumber = "12345",
+			IPv4Address = "192.168.2.100",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "user3"
 		},
 		new Device {
 			Id = 13,
-			Name = "SUL2-LNO-200005",
-			GetIPv4Address = "10.1.3.205",
-			GetSubnetMask = "255.255.255.0",
-			Location = "Subotica - Lokacija 2",
-			User = "bomba",
-		},
-		new Device {
-			Id = 14,
-			Name = "SUL2-L365-200005",
-			GetIPv4Address = "DHCP",
-			GetSubnetMask = "DHCP",
-			Location = "Subotica - Lokacija 2",
-			User = "bomba",
-		},
-		new Device {
-			Id = 15,
-			Name = "SUL2-L19-200005",
-			GetIPv4Address = "DHCP",
-			GetSubnetMask = "DHCP",
-			Location = "Subotica - Lokacija 2",
-		},
-		new Device {
-			Id = 16,
-			Name = "SUL2-LNO-200005",
-			GetIPv4Address = "10.1.3.206",
-			GetSubnetMask = "255.255.255.0",
-			Location = "Subotica - Lokacija 2",
+			Name = "Location 2 Laptop2",
+			SerialNumber = "12345",
+			IPv4Address = "192.168.2.101",
+			SubnetMask = "255.255.255.0]",
+			Location = "Location 2",
+			User = "user4"
 		},
 	];
 
@@ -183,13 +155,8 @@ public class DeviceInMemoryRepository : IDeviceRepository
 				Id = device.Id,
 				Name = device.Name,
 				SerialNumber = device.SerialNumber,
-				GetIPv4Address = device.GetIPv4Address,
-				GetSubnetMask = device.GetSubnetMask,
-				GetGateway = device.GetGateway,
-				GetPreferredDNS = device.GetPreferredDNS,
-				GetAlternateDNS = device.GetAlternateDNS,
-				Vlan = device.Vlan,
-				UpstreamDevice = device.UpstreamDevice,
+				IPv4Address = device.IPv4Address,
+				SubnetMask = device.SubnetMask,
 				Location = device.Location,
 				User = device.User
 			});
@@ -226,13 +193,8 @@ public class DeviceInMemoryRepository : IDeviceRepository
 		{
 			deviceToUpdate.Name = device.Name;
 			deviceToUpdate.SerialNumber = device.SerialNumber;
-			deviceToUpdate.GetIPv4Address = device.GetIPv4Address;
-			deviceToUpdate.GetSubnetMask = device.GetSubnetMask;
-			deviceToUpdate.GetGateway = device.GetGateway;
-			deviceToUpdate.GetPreferredDNS = device.GetPreferredDNS;
-			deviceToUpdate.GetAlternateDNS = device.GetAlternateDNS;
-			deviceToUpdate.Vlan = device.Vlan;
-			deviceToUpdate.UpstreamDevice = device.UpstreamDevice;
+			deviceToUpdate.IPv4Address = device.IPv4Address;
+			deviceToUpdate.SubnetMask = device.SubnetMask;
 			deviceToUpdate.Location = device.Location;
 			deviceToUpdate.User = device.User;
 		}
