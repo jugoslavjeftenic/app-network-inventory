@@ -18,16 +18,23 @@ public partial class DevicesViewModel(
 
 	public async Task LoadDevicesAsync()
 	{
-		Devices.Clear();
+		this.Devices.Clear();
 
 		var devices = await _viewDevicesUseCase.ExecuteAsync(string.Empty);
 		if (devices.Count > 0)
 		{
 			foreach (var device in devices)
 			{
-				Devices.Add(device);
+				this.Devices.Add(device);
 			}
 		}
+	}
+
+	[RelayCommand]
+	public async Task GoToEditDevice(int deviceId)
+	{
+		await Shell.Current.GoToAsync($"{nameof(EditDevicePage)}?Id={deviceId}");
+		await LoadDevicesAsync();
 	}
 
 	[RelayCommand]
@@ -35,11 +42,5 @@ public partial class DevicesViewModel(
 	{
 		await _deleteDeviceUseCase.ExecuteAsync(deviceId);
 		await LoadDevicesAsync();
-	}
-
-	[RelayCommand]
-	public async Task GoToEditDevice(int deviceId)
-	{
-		await Shell.Current.GoToAsync($"{nameof(EditDevicePage)}?Id={deviceId}");
 	}
 }

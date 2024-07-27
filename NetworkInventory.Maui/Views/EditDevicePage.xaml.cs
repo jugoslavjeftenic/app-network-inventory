@@ -26,7 +26,7 @@ public partial class EditDevicePage : ContentPage
 		InitializeComponent();
 		_deviceViewModel = deviceViewModel;
 
-		BindingContext = _deviceViewModel;
+		this.BindingContext = _deviceViewModel;
 	}
 
 	public string DeviceId

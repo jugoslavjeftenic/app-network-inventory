@@ -5,12 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:NetworkInventory.Maui"
     xmlns:views="clr-namespace:NetworkInventory.Maui.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Title="NetworkInventory.Maui">
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:DevicesPage}"
-        Route="MainPage" />
+        Route="DevicesPage" />
 
 </Shell>

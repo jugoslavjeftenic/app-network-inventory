@@ -14,7 +14,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="Device name"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.Name}"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -37,7 +37,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="Serial number"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.SerialNumber}"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -60,7 +60,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="IPv4 address"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.IPv4Address}"
                         ClearButtonVisibility="WhileEditing"
                         MaxLength="15"
@@ -76,7 +76,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="Subnet mask"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.SubnetMask}"
                         ClearButtonVisibility="WhileEditing"
                         MaxLength="15"
@@ -92,7 +92,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="Location"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.Location}"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -114,7 +114,7 @@
                     <Label VerticalOptions="Center" WidthRequest="90" Text="User"/>
                     <Entry
                         VerticalOptions="Center"
-                        WidthRequest="240"
+                        WidthRequest="200"
                         Text="{Binding Device.User}"
                         ClearButtonVisibility="WhileEditing"
                         Keyboard="Text"
@@ -132,13 +132,8 @@
                 </HorizontalStackLayout>
             </Frame>
 
-            <Button
-            x:Name="SaveBtn"
-            Text="Save"/>
-
-            <Button
-            x:Name="CancelBtn"
-            Text="Cancel"/>
+            <Button x:Name="SaveBtn" Text="Save" Command="{Binding EditDeviceCommand}"/>
+            <Button x:Name="CancelBtn" Text="Cancel" Command="{Binding BackToDevicesCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentView>
