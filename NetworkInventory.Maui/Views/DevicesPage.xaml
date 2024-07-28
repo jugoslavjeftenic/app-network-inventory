@@ -19,58 +19,6 @@
             Placeholder="Search Devices by Name, Sn, Location or User"
             Text="{Binding FilterText}"/>
 
-        <!--<ListView
-            Grid.Column="0"
-            Grid.Row="1"
-            x:Name="DevicesList"
-            RowHeight="50"
-            Background="Transparent"
-            SeparatorColor="Silver"
-            ItemsSource="{Binding Devices}"
-            ItemSelected="DevicesList_ItemSelected"
-            ItemTapped="DevicesList_ItemTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="m:Device">
-                    <TextCell
-                        Text="{Binding Name}"
-                        Detail="{Binding CIDR}">
-                        <TextCell.ContextActions>
-                            <MenuItem
-                                Text="Delete"
-                                IsDestructive="True"
-                                Clicked="DeleteMenuItem_Clicked"
-                                CommandParameter="{Binding .}"/>
-                        </TextCell.ContextActions>
-                    </TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-
-        <!--<ListView
-            Grid.Column="0"
-            Grid.Row="1"
-            RowHeight="50"
-            x:Name="DevicesList"
-            Background="Transparent"
-            SeparatorColor="Silver"
-            ItemsSource="{Binding Devices}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="m:Device">
-                    <TextCell
-                        Text="{Binding Name}"
-                        Detail="{Binding CIDR}">
-                        <TextCell.ContextActions>
-                            <MenuItem
-                                Text="Delete"
-                                IsDestructive="True"
-                                Command="{Binding Source={x:Reference DevicesList}, Path=BindingContext.DeleteDeviceCommand}"
-                                CommandParameter="{Binding Id}"/>
-                        </TextCell.ContextActions>
-                    </TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-
         <ListView
             Grid.Column="0"
             Grid.Row="1"
@@ -104,26 +52,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <!--<CollectionView
-            Grid.Column="0"
-            Grid.Row="1"
-            ItemsSource="{Binding Devices}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="m:Device">
-                    <StackLayout>
-                        <Frame Margin="0,5">
-                            <StackLayout
-                                Orientation="Vertical"
-                                Spacing="5">
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding CIDR}"/>
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
 
         <Button
             Grid.Column="0"
