@@ -22,12 +22,6 @@
                         ReturnType="Next"
                         IsSpellCheckEnabled="false"
                         IsTextPredictionEnabled="false">
-                        <Entry.Behaviors>
-                            <toolkit:TextValidationBehavior
-                                x:Name="NameValidator"
-                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="2"/>
-                        </Entry.Behaviors>
                     </Entry>
                 </HorizontalStackLayout>
             </Frame>
@@ -45,12 +39,6 @@
                         ReturnType="Next"
                         IsSpellCheckEnabled="false"
                         IsTextPredictionEnabled="false">
-                        <Entry.Behaviors>
-                            <toolkit:TextValidationBehavior
-                                x:Name="SerialNumberValidator"
-                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="2"/>
-                        </Entry.Behaviors>
                     </Entry>
                 </HorizontalStackLayout>
             </Frame>
@@ -99,12 +87,6 @@
                         ReturnType="Next"
                         IsSpellCheckEnabled="false"
                         IsTextPredictionEnabled="false">
-                        <Entry.Behaviors>
-                            <toolkit:TextValidationBehavior
-                                x:Name="LocationValidator"
-                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="2"/>
-                        </Entry.Behaviors>
                     </Entry>
                 </HorizontalStackLayout>
             </Frame>
@@ -122,12 +104,6 @@
                         ReturnType="Done"
                         IsSpellCheckEnabled="false"
                         IsTextPredictionEnabled="false">
-                        <Entry.Behaviors>
-                            <toolkit:TextValidationBehavior
-                                x:Name="UserValidator"
-                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
-                                MinimumLength="2"/>
-                        </Entry.Behaviors>
                     </Entry>
                 </HorizontalStackLayout>
             </Frame>
