@@ -16,11 +16,22 @@ public partial class DevicesViewModel(
 
 	public ObservableCollection<Device> Devices { get; set; } = [];
 
-	public async Task LoadDevicesAsync()
+	private string _filterText = "";
+	public string FilterText
+	{
+		get { return _filterText; }
+		set
+		{
+			_filterText = value;
+			LoadDevicesAsync(_filterText).ConfigureAwait(true);
+		}
+	}
+
+	public async Task LoadDevicesAsync(string filterText = "")
 	{
 		Devices.Clear();
 
-		var devices = await _viewDevicesUseCase.ExecuteAsync(string.Empty);
+		var devices = await _viewDevicesUseCase.ExecuteAsync(filterText);
 		if (devices.Count > 0)
 		{
 			foreach (var device in devices)

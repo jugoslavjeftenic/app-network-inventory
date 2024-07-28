@@ -16,7 +16,8 @@
             Grid.Column="0"
             Grid.Row="0"
             x:Name="SearchBar"
-            Placeholder="Search Devices by Name, Sn, Location or User"/>
+            Placeholder="Search Devices by Name, Sn, Location or User"
+            Text="{Binding FilterText}"/>
 
         <!--<ListView
             Grid.Column="0"
