@@ -132,8 +132,8 @@
                 </HorizontalStackLayout>
             </Frame>
 
-            <Button x:Name="SaveBtn" Text="Save" Command="{Binding EditDeviceCommand}"/>
-            <Button x:Name="CancelBtn" Text="Cancel" Command="{Binding BackToDevicesCommand}"/>
+            <Button Text="Save" x:Name="SaveBtn"/>
+            <Button Text="Cancel" Command="{Binding BackToDevicesCommand}"/>
         </StackLayout>
     </ScrollView>
 </ContentView>

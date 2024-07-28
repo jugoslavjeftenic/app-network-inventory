@@ -1,8 +1,4 @@
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
 using NetworkInventory.Maui.ViewModels;
-using NetworkInventory.UseCases.Interfaces;
-using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.Views;
 
@@ -10,23 +6,13 @@ namespace NetworkInventory.Maui.Views;
 public partial class EditDevicePage : ContentPage
 {
 	private readonly DeviceViewModel _deviceViewModel;
-	//private Device? _device;
-	//private readonly IViewDeviceUseCase _viewDeviceUseCase;
-	//private readonly IEditDeviceUseCase _editDeviceUseCase;
-
-	//public EditDevicePage(IViewDeviceUseCase viewDeviceUseCase, IEditDeviceUseCase editDeviceUseCase)
-	//{
-	//	InitializeComponent();
-	//	_viewDeviceUseCase = viewDeviceUseCase;
-	//	_editDeviceUseCase = editDeviceUseCase;
-	//}
 
 	public EditDevicePage(DeviceViewModel deviceViewModel)
 	{
 		InitializeComponent();
 		_deviceViewModel = deviceViewModel;
 
-		this.BindingContext = _deviceViewModel;
+		BindingContext = _deviceViewModel;
 	}
 
 	public string DeviceId

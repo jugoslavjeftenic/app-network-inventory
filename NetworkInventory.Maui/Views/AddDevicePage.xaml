@@ -6,11 +6,6 @@
              Title="Add Device">
 
     <controls:DeviceControl
-        x:Name="DeviceControl"/>
-
-    <!--<controls:DeviceControl
-        x:Name="DeviceControl"
-        OnSave="DeviceControl_OnSave"
-        OnCancel="DeviceControl_OnCancel"
-        OnError="DeviceControl_OnError"/>-->
+        IsForAdd="True"
+        BindingContext="{Binding .}"/>
 </ContentPage>

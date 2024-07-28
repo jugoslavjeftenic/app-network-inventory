@@ -1,7 +1,4 @@
 using NetworkInventory.Maui.ViewModels;
-using NetworkInventory.UseCases.Interfaces;
-using System.Collections.ObjectModel;
-using Device = NetworkInventory.CoreBusiness.Device;
 
 namespace NetworkInventory.Maui.Views;
 
@@ -12,16 +9,16 @@ public partial class DevicesPage : ContentPage
 	public DevicesPage(DevicesViewModel devicesViewModel)
 	{
 		InitializeComponent();
-		this._devicesViewModel = devicesViewModel;
+		_devicesViewModel = devicesViewModel;
 
-		this.BindingContext = _devicesViewModel;
+		BindingContext = _devicesViewModel;
 	}
 
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
 
-		await this._devicesViewModel.LoadDevicesAsync();
+		await _devicesViewModel.LoadDevicesAsync();
 	}
 
 	//private readonly IViewDevicesUseCase _viewDevicesUseCase;

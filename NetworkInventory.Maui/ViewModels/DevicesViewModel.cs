@@ -18,16 +18,23 @@ public partial class DevicesViewModel(
 
 	public async Task LoadDevicesAsync()
 	{
-		this.Devices.Clear();
+		Devices.Clear();
 
 		var devices = await _viewDevicesUseCase.ExecuteAsync(string.Empty);
 		if (devices.Count > 0)
 		{
 			foreach (var device in devices)
 			{
-				this.Devices.Add(device);
+				Devices.Add(device);
 			}
 		}
+	}
+
+	[RelayCommand]
+	public async Task GoToAddDevice()
+	{
+		await Shell.Current.GoToAsync($"{nameof(AddDevicePage)}");
+		await LoadDevicesAsync();
 	}
 
 	[RelayCommand]

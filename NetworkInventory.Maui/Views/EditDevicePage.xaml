@@ -5,18 +5,7 @@
              x:Class="NetworkInventory.Maui.Views.EditDevicePage"
              Title="Edit Device">
 
-    <!--<VerticalStackLayout>
-        <Label
-            Text="{Binding Device.Name}"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"/>
-    </VerticalStackLayout>-->
-
-    <controls:DeviceControl BindingContext="{Binding .}"/>
-
-    <!--<controls:DeviceControl
-        x:Name="DeviceControl"
-        OnSave="DeviceControl_OnSave"
-        OnCancel="DeviceControl_OnCancel"
-        OnError="DeviceControl_OnError"/>-->
+    <controls:DeviceControl
+        IsForEdit="True"
+        BindingContext="{Binding .}"/>
 </ContentPage>

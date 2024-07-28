@@ -1,19 +1,26 @@
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
-using NetworkInventory.UseCases.Interfaces;
-using Device = NetworkInventory.CoreBusiness.Device;
+using NetworkInventory.Maui.ViewModels;
 
 namespace NetworkInventory.Maui.Views;
 
 public partial class AddDevicePage : ContentPage
 {
-	private readonly IAddDeviceUseCase _addDeviceUseCase;
+	private readonly DeviceViewModel _deviceViewModel;
 
-	public AddDevicePage(IAddDeviceUseCase addDeviceUseCase)
+	public AddDevicePage(DeviceViewModel deviceViewModel)
 	{
 		InitializeComponent();
-		_addDeviceUseCase = addDeviceUseCase;
+		_deviceViewModel = deviceViewModel;
+
+		BindingContext = _deviceViewModel;
 	}
+
+	//private readonly IAddDeviceUseCase _addDeviceUseCase;
+
+	//public AddDevicePage(IAddDeviceUseCase addDeviceUseCase)
+	//{
+	//	InitializeComponent();
+	//	_addDeviceUseCase = addDeviceUseCase;
+	//}
 
 	//private async void DeviceControl_OnSave(object sender, EventArgs e)
 	//{
@@ -35,14 +42,14 @@ public partial class AddDevicePage : ContentPage
 	//	await Shell.Current.GoToAsync("..");
 	//}
 
-	private void DeviceControl_OnCancel(object sender, EventArgs e)
-	{
-		Shell.Current.GoToAsync("..");
-	}
+	//private void DeviceControl_OnCancel(object sender, EventArgs e)
+	//{
+	//	Shell.Current.GoToAsync("..");
+	//}
 
-	private void DeviceControl_OnError(object sender, string e)
-	{
-		var toast = Toast.Make(e, ToastDuration.Short);
-		toast.Show();
-	}
+	//private void DeviceControl_OnError(object sender, string e)
+	//{
+	//	var toast = Toast.Make(e, ToastDuration.Short);
+	//	toast.Show();
+	//}
 }
