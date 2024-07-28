@@ -14,6 +14,13 @@ public partial class AddDevicePage : ContentPage
 		BindingContext = _deviceViewModel;
 	}
 
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+
+		_deviceViewModel.Device = new CoreBusiness.Device();
+	}
+
 	//private readonly IAddDeviceUseCase _addDeviceUseCase;
 
 	//public AddDevicePage(IAddDeviceUseCase addDeviceUseCase)
