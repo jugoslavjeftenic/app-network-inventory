@@ -67,6 +67,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\NetworkInventory.CoreBusiness\NetworkInventory.CoreBusiness.csproj" />
 		<ProjectReference Include="..\NetworkInventory.Plugins.DataStore.InMemory\NetworkInventory.Plugins.DataStore.InMemory.csproj" />
+		<ProjectReference Include="..\NetworkInventory.Plugins.DataStore.SQLite\NetworkInventory.Plugins.DataStore.SQLite.csproj" />
 		<ProjectReference Include="..\NetworkInventory.UseCases\NetworkInventory.UseCases.csproj" />
 	</ItemGroup>
 

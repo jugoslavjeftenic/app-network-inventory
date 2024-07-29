@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using NetworkInventory.Maui.ViewModels;
 using NetworkInventory.Maui.Views;
-using NetworkInventory.Plugins.DataStore.InMemory;
+using NetworkInventory.Plugins.DataStore.SQLite;
 using NetworkInventory.UseCases;
 using NetworkInventory.UseCases.Interfaces;
 using NetworkInventory.UseCases.PluginInterfaces;
@@ -28,8 +28,11 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		// Plugins
+		//builder.Services.AddSingleton<IDeviceRepository, DeviceInMemoryRepository>();
+		builder.Services.AddSingleton<IDeviceRepository, DeviceSQLiteRepository>();
+
 		// Use Cases
-		builder.Services.AddSingleton<IDeviceRepository, DeviceInMemoryRepository>();
 		builder.Services.AddSingleton<IViewDevicesUseCase, ViewDevicesUseCase>();
 		builder.Services.AddSingleton<IViewDeviceUseCase, ViewDeviceUseCase>();
 		builder.Services.AddTransient<IEditDeviceUseCase, EditDeviceUseCase>();
