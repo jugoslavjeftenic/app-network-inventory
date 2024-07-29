@@ -1,11 +1,18 @@
-﻿namespace NetworkInventory.CoreBusiness;
+﻿using SQLite;
+using System.ComponentModel.DataAnnotations;
+
+namespace NetworkInventory.CoreBusiness;
 
 /// <summary>
 /// Represents a network device with various network and hardware properties.
 /// </summary>
 public class Device
 {
+	[Required]
+	[PrimaryKey, AutoIncrement]
 	public int Id { get; set; }
+
+	[Required]
 	public string Name { get; set; } = "";
 	public string SerialNumber { get; set; } = "";
 	public string IPv4Address { get; set; } = "";
