@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkInventory.CoreBusine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkInventory.UseCases", "NetworkInventory.UseCases\NetworkInventory.UseCases.csproj", "{EFCABFFC-C62F-477A-8135-1495A2CE1256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInventory.Plugins.DataStore.InMemory", "NetworkInventory.Plugins.DataStore.InMemory\NetworkInventory.Plugins.DataStore.InMemory.csproj", "{9B89BEDB-64C1-487B-99EA-AD42CAAF9482}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkInventory.Plugins.DataStore.InMemory", "NetworkInventory.Plugins.DataStore.InMemory\NetworkInventory.Plugins.DataStore.InMemory.csproj", "{9B89BEDB-64C1-487B-99EA-AD42CAAF9482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkInventory.Plugins.DataStore.SQLite", "NetworkInventory.Plugins.DataStore.SQLite\NetworkInventory.Plugins.DataStore.SQLite.csproj", "{A4C5A977-C05B-4639-B765-414B873A1E00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{9B89BEDB-64C1-487B-99EA-AD42CAAF9482}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B89BEDB-64C1-487B-99EA-AD42CAAF9482}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B89BEDB-64C1-487B-99EA-AD42CAAF9482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C5A977-C05B-4639-B765-414B873A1E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C5A977-C05B-4639-B765-414B873A1E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C5A977-C05B-4639-B765-414B873A1E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C5A977-C05B-4639-B765-414B873A1E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
